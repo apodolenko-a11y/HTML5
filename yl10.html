@@ -1,0 +1,170 @@
+!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Õpimine HTML5">
+    <meta name="author" content="Anastasiia Podolenko">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <title>Ülesanne 02</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 650px;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .inline-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        /* Säilitame brauseri vaikimisi fookusejoone */
+        input:focus, select:focus, textarea:focus, button:focus {
+            outline: auto;
+            outline-color: Highlight; /* Windows */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-row {
+            margin-top: 25px;
+        }
+    </style>
+<body>
+    <!-- Anastasiia 13.11.25 -->
+    <h1>ÕPILASTE REGISTREERIMISVORM</h1>
+    <form>
+
+    <!-- Isikuandmed -->
+    <h2>Isikuandmed</h2>
+
+    <label>Eesnimi
+        <input type="text" name="firstname" placeholder="nt Anastasiia" maxlength="30" required>
+    </label>
+
+    <label>Perekonnanimi
+        <input type="text" name="lastname" placeholder="nt Podolenko" maxlength="30" required>
+    </label>
+
+    <label>Sünnikuupäev
+        <input type="date" name="birthday" min="1950-01-01" max="2025-12-31" required>
+    </label>
+
+    <label>Sugu:</label>
+    <button class="checkbox-group">
+        <label><input type="radio" name="gender" value="Naine"> Naine</label>
+        <label><input type="radio" name="gender" value="Mees"> Mees</label>
+        <label><input type="radio" name="gender" value="Muu"> Muu</label>
+    </button>
+
+    <!-- Kontakt -->
+    <h2>Kontakt</h2>
+
+    <label>E-post
+        <input type="email" name="email" placeholder="nt nimi@kool.ee" maxlength="100" required>
+    </label>
+
+    <label>Mobitelefon
+        <input type="tel" name="phone" placeholder="+372 51234567" pattern="^\+?\d{3}\s?\d{7,8}">
+    </label>
+
+    <label>Aadress
+        <textarea name="address" placeholder="Tänav, maja, korter"></textarea>
+    </label>
+
+    <label>Linn / asula
+        <input type="text" name="city" placeholder="nt Tallinn" maxlength="30">
+    </label>
+
+    <label>Postiindeks
+        <input type="text" name="postcode" placeholder="nt 10111" maxlength="5" pattern="^\d{5}$">
+    </label>
+
+    <label>Riik
+        <select name="country">
+            <option value="Eesti">Eesti</option>
+            <option value="Soome">Soome</option>
+            <option value="Läti">Läti</option>
+            <option value="Leedu">Leedu</option>
+        </select>
+    </label>
+
+    <!-- Muu info -->
+    <h2>Muu info</h2>
+
+    <label>Huvialad:</label>
+    <button class="checkbox-group">
+        <label><input type="checkbox" name="hobby" value="Joonistamine"> Joonistamine</label>
+        <label><input type="checkbox" name="hobby" value="Laulmine"> Laulmine</label>
+        <label><input type="checkbox" name="hobby" value="Tantsimine"> Tantsimine</label>
+        <label><input type="checkbox" name="hobby" value="Kokkamine"> Kokkamine</label>
+        <label><input type="checkbox" name="hobby_other"> Muu</label>
+    </button>
+
+    <label>Isiklik veebileht
+        <input type="url" name="website" placeholder="https://minuleht.ee">
+    </label>
+
+    <label>Eelistatud teema värv
+        <input type="color" name="favoriteColor">
+    </label>
+
+    <label>Dokumendid 
+        <input type="file" name="files" accept=".pdf, .jpg, .jpeg, .png">
+    </label>
+
+    <!-- Nõusolek -->
+    <h2>Nõusolemine</h2>
+
+    <label>
+        <input type="checkbox" name="agree" required>
+        Kinnitan, et esitatud andmed on õiged ja luban nende töötlemist vastavalt kooli tingimustele.
+    </label>
+
+    <button class="submit-row">
+        <button type="submit">Saada</button>
+        <button type="reset">Tühjenda</button>
+    </button>
+
+</form>
+    
+</body>
+</html>
