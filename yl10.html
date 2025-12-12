@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="et">
 <head>
     <meta charset="UTF-8">
@@ -9,162 +9,101 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="img/site.webmanifest">
-    <title>Ülesanne 02</title>
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background: #f5f5f5;
-        }
+    <title>Ülesanne 10 &copy;</title>
 
-        form {
-            background: white;
-            padding: 25px;
-            max-width: 650px;
-            border-radius: 6px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            margin-top: 30px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 4px;
-            font-size: 16px;
-        }
-
-        textarea {
-            height: 80px;
-        }
-
-        .inline-group label {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        /* Säilitame brauseri vaikimisi fookusejoone */
-        input:focus, select:focus, textarea:focus, button:focus {
-            outline: auto;
-            outline-color: Highlight; /* Windows */
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .submit-row {
-            margin-top: 25px;
-        }
-    </style>
+</head>
 <body>
-    <!-- Anastasiia 13.11.25 -->
-    <h1>ÕPILASTE REGISTREERIMISVORM</h1>
+ <!-- Anastasiia 13.11.25 -->
+ <h1>ÕPILASE REGISTREERIMISVORM</h1>
+ <form action="" method="get">
+    <fieldset style="width: 450px;">
+        <legend>Isikuandmed</legend>
+        <label for="name">Eesnimi</label>
+        <input type="text" id="name" required placeholder="nt. Anastasiia" maxlength="30"> <br>
+        <small>(kuni 30 märki; nõutud; placeholder: nt.Anastasiia)</small><br><br>
+        <label for="name">Perenimi</label>
+        <input type="text" id="name" required placeholder="nt. Podolenko" maxlength="30"><br>
+        <small>(kuni 30 märki; nõutud; placeholder: nt.Podolenko)</small><br><br>
+        <label for="name">Sunnikuupäev</label>
+        <input type="date" id="sünnikuupäev" name="sünnikuupäev" min="1950-01-01" max="2025-12-31" required value="1980-01-01"><br>
+        <small>(min.1950-01-01; max 2025-12-31; vaikimisi 1980-01-01; nõutud)</small><br><br>
+        <input type="radio" name="tuba" value="Mees"> Mees 
+        <input type="radio" name="tuba" value="Naine" checked> Naine
+        <input type="radio" name="tuba" value="Muu" checked> Muu
+    </fieldset>
+ </form>
+    <fieldset style="width: 600px;">
+        <legend>Kontakt</legend>
+        <label for="name">E-Post</label>
+        <input type="text" id="name" required placeholder="nt. nimi@kool.ee"> <br>
+        <small>(100 tähemärki; nõutud; placeholder: nt.nimi@kool.ee)><br><br>
+        <label for="name">Mobiilitelefon</label>
+        <input type="text" id="numeric" required placeholder="+372 51234567"> <br>
+        <small>(nõutav muster / pattern: ^\+3725\d{7,8}$)</small><br><br>
+        <label for="aadress">Aadress</label>
+        <textarea name="aadress" id="aadress" required placeholder="(Tänav, maja, korter)"></textarea><br><br>
+        <legend>Linn/asula</legend>
+        <input type="text" id="name" required placeholder="nt. Tallinn"> <br>
+        <small>(kuni 30 märki; nõutud; placeholder: nt. Tallinn)</small><br><br>
+        <label for="name">Postiindeks</label><br>
+        <input type="text" id="name" required pattern="\d{5}" placeholder="nt.10111 "><br>  
+        <small>(täpselt 5 numbrit; muster:\d{5})</small><br><br>
+        <label for="name">Riik</label><br>
+        <input type="text" id="Riik" name="Riik" value="Eesti" readonly><br>
+        <small>(Muutmatu väli)</small>
+    </fieldset> 
+    <br>
     <form>
+    <fieldset style="width: 450px;">
+        <legend>Muu info</legend>
+        <label>Huvialad</label><br>
+        <input type="checkbox" name="huvi_joonistamine"> Joonistamine
+        <input type="checkbox" name="huvi_laulmine"> Laulmine
+        <input type="checkbox" name="huvi_tantsimine"> Tantsimine<br><br>
+        <label>Kokkamine</label><br>
+        <input type="checkbox" name="kokkamine_muu"> Muu:
+        <input type="text" name="kokkamine_muu_tekst" maxlength="30" placeholder="täpsusta (kuni 30 märki)"><br><br>
+        <label for="veebileht">Isiklik veebileht</label><br>
+        <input type="url" id="veebileht" name="veebileht" placeholder="https://minuleht.ee" pattern="https?://.*"><br>
+        <small>(peab algama http:// või https://)</small><br><br>
+        <label for="teemavarv">Eelistatud teema värv (valikuline)</label><br>
+        <input type="color" id="teemavärv" name="teemavärv"><br><br>
+        <label for="dokumendid">Dokumendid (PDF või pilt)</label><br>
+        <input type="file" id="dokumendid" name="dokumendid" accept=".pdf,image/*"><br>
+        <small>(lubada PDF ja pildid)</small>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Nõustumine</legend>
+        
+        <label for="noustun">
+            <input type="checkbox" name="noustun" id="noustun" required>
+            Kinnitan, et esitatud andmed on õiged ja luban nende töötlemist vastavalt kooli tingimustele.
+        </label>
+    </fieldset>
 
-    <!-- Isikuandmed -->
-    <h2>Isikuandmed</h2>
-
-    <label>Eesnimi
-        <input type="text" name="firstname" placeholder="nt Anastasiia" maxlength="30" required>
-    </label>
-
-    <label>Perekonnanimi
-        <input type="text" name="lastname" placeholder="nt Podolenko" maxlength="30" required>
-    </label>
-
-    <label>Sünnikuupäev
-        <input type="date" name="birthday" min="1950-01-01" max="2025-12-31" required>
-    </label>
-
-    <label>Sugu:</label>
-    <button class="checkbox-group">
-        <label><input type="radio" name="gender" value="Naine"> Naine</label>
-        <label><input type="radio" name="gender" value="Mees"> Mees</label>
-        <label><input type="radio" name="gender" value="Muu"> Muu</label>
-    </button>
-
-    <!-- Kontakt -->
-    <h2>Kontakt</h2>
-
-    <label>E-post
-        <input type="email" name="email" placeholder="nt nimi@kool.ee" maxlength="100" required>
-    </label>
-
-    <label>Mobitelefon
-        <input type="tel" name="phone" placeholder="+372 51234567" pattern="^\+?\d{3}\s?\d{7,8}">
-    </label>
-
-    <label>Aadress
-        <textarea name="address" placeholder="Tänav, maja, korter"></textarea>
-    </label>
-
-    <label>Linn / asula
-        <input type="text" name="city" placeholder="nt Tallinn" maxlength="30">
-    </label>
-
-    <label>Postiindeks
-        <input type="text" name="postcode" placeholder="nt 10111" maxlength="5" pattern="^\d{5}$">
-    </label>
-
-    <label>Riik
-        <select name="country">
-            <option value="Eesti">Eesti</option>
-            <option value="Soome">Soome</option>
-            <option value="Läti">Läti</option>
-            <option value="Leedu">Leedu</option>
-        </select>
-    </label>
-
-    <!-- Muu info -->
-    <h2>Muu info</h2>
-
-    <label>Huvialad:</label>
-    <button class="checkbox-group">
-        <label><input type="checkbox" name="hobby" value="Joonistamine"> Joonistamine</label>
-        <label><input type="checkbox" name="hobby" value="Laulmine"> Laulmine</label>
-        <label><input type="checkbox" name="hobby" value="Tantsimine"> Tantsimine</label>
-        <label><input type="checkbox" name="hobby" value="Kokkamine"> Kokkamine</label>
-        <label><input type="checkbox" name="hobby_other"> Muu</label>
-    </button>
-
-    <label>Isiklik veebileht
-        <input type="url" name="website" placeholder="https://minuleht.ee">
-    </label>
-
-    <label>Eelistatud teema värv
-        <input type="color" name="favoriteColor">
-    </label>
-
-    <label>Dokumendid 
-        <input type="file" name="files" accept=".pdf, .jpg, .jpeg, .png">
-    </label>
-
-    <!-- Nõusolek -->
-    <h2>Nõusolemine</h2>
-
-    <label>
-        <input type="checkbox" name="agree" required>
-        Kinnitan, et esitatud andmed on õiged ja luban nende töötlemist vastavalt kooli tingimustele.
-    </label>
-
-    <button class="submit-row">
-        <button type="submit">Saada</button>
-        <button type="reset">Tühjenda</button>
-    </button>
-
-</form>
-    
+    <button type="submit">Saada</button>
+    <button type="reset">Tühjenda</button>
+    </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
